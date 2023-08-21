@@ -1,5 +1,16 @@
-export function NewProject() {
+import React from 'react'
+import { NewProjectForms } from '../layout/Forms/NewProjectForms'
+
+interface newProjectProps {}
+
+export const NewProject: React.FC<newProjectProps> = () => {
     return(
-        <h1>NEW PROJECT</h1>
+        <div className='container'>
+            <h1>NEW PROJECT</h1>
+            <p>Crie o seu projeto para depois adicionar os serviços</p>
+            <p>Formulário:</p>
+            <NewProjectForms />
+        </div>
+        
     )
 }
