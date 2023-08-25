@@ -1,0 +1,82 @@
+.custombtn {
+    color: white;
+    border: 2px solid white;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+  }
+
+
+.btn3 {
+    background: transparent;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn3:before,
+  .btn3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgba(0,0,0,1);
+    transition: all 0.3s ease;
+  }
+  .btn3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn3:hover{
+     background: white;
+    box-shadow: none;
+  }
+  .btn3:hover:before {
+    height: 100%;
+  }
+  .btn3:hover:after {
+    width: 100%;
+  }
+  .btn3 span:hover{
+     color: rgba(0,0,0,1);
+  }
+  .btn3 span:before,
+  .btn3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgba(0,0,0,1);
+    transition: all 0.3s ease;
+  }
+  .btn3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn3 span:hover:before {
+    height: 100%;
+  }
+  .btn3 span:hover:after {
+    width: 100%;
+  }

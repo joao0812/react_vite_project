@@ -1,9 +1,9 @@
 import React from 'react'
 
-interface companyProps {}
+interface companyProps { }
 
 export const Company: React.FC<companyProps> = () => {
-    return(
+    return (
         <h1>COMPANY</h1>
     )
 }

@@ -6,15 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "backend": "json-server --watch db.json --port 5001",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@fontsource-variable/open-sans": "^5.0.9",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

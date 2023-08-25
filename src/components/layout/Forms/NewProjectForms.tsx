@@ -1,65 +1,35 @@
 import React from 'react'
-import { LinkButton } from '../buttons/LinkButton'
+
+import { SubmitButton } from './Buttons/SubmitButton'
+import { Input } from './Inputs/Input'
+import { Select } from './Inputs/Selects'
+import { TextArea } from './Inputs/TextArea'
 
 interface NewProjectProps { }
 
 export const NewProjectForms: React.FC<NewProjectProps> = () => {
     return (
-        <form className='w-1/3 flex flex-col gap-6 p-4 bg-yellow-300 rounded-md'>
-            <div className='flex flex-col w-full'>
-                <div className='flex flex-col w-full'>
-                    <label>Nome do projeto: </label>
-                    <input className='rounded-md border-2 border-black p-1' type='text' placeholder='Nome' />
-                </div>
-                <div className='flex flex-col w-full'>
-                    <label>Acro do projeto: </label>
-                    <input className='rounded-md border-2 border-black p-1' type='text' placeholder='Acro' />
-                </div>
-            </div>
-            <div className='flex flex-col w-full'>
-                <div className='flex flex-col w-full'>
-                    <label>Area: </label>
-                    <select className='rounded-md border-2 border-black p-1'>
-                        <option value='None'>None</option>
-                        <option value='software'>Software</option>
-                        <option value='Big Data'>Big Data</option>
-                        <option value='Robótica'>Robótica</option>
-                        <option value='Computação'>Computação</option>
-                        <option value='Química'>Química</option>
-                    </select>
-                </div>
-                <div className='flex flex-col w-full'>
-                    <label>Lider: </label>
-                    <select className='rounded-md border-2 border-black p-1'>
-                        <option value='None'>None</option>
-                        <option value='Lucas'>Lucas</option>
-                        <option value='João'>João</option>
-                        <option value='Eduardo'>Eduardo</option>
-                        <option value='Erick'>Erick</option>
-                        <option value='Julia'>Julia</option>
-                    </select>
-                </div>
-            </div>
-            <div className='flex flex-col w-full'>
-                <label>Localização do projeto: </label>
-                <input className='rounded-md border-2 border-black p-1' type='text' placeholder='Localização' />
-                <div className='flex w-full justify-between'>
-                    <div className='flex flex-col w-5/12'>
-                        <label>Longitude: </label>
-                        <input className='rounded-md border-2 border-black p-1' type='text' placeholder='Localização' />
+        <form className='w-full flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center justify-center lg:w-2/3 w-11/12 max-w-2xl px-6 py-10 bg-gradient-to-b from-indigo-500 to-blue-500 h-full gap-12'>
+                <div className='w-full flex gap-4 md:flex-row flex-col'>
+                    <div className='flex flex-col w-full gap-8'>
+                        <Input name='Project' text='Project Name' type='text' placeholder='Name...' />
+                        <Input name='ProjectAcro' text='Project Acro' type='text' placeholder='AA' maxValue={2} />
                     </div>
-                    <div className='flex flex-col w-5/12'>
-                        <label>Latitude: </label>
-                        <input className='rounded-md border-2 border-black p-1' type='text' placeholder='Localização' />
+                    <div className='flex flex-col w-full gap-8'>
+                        <Select options={['None', 'software', 'Big Data', 'Robótica', 'Computação', 'Química']} text='Area' value={['None', 'software', 'Big Data', 'Robótica', 'Computação', 'Química']} />
+                        <Select options={['None', 'Lucas', 'João', 'Eduardo', 'Erick', 'Julia']} text='Lead' value={['None', 'Lucas', 'João', 'Eduardo', 'Erick', 'Julia']} />
                     </div>
                 </div>
-            </div>
-            <div className='flex flex-col w-full'>
-                <label>Descrição: </label>
-                <textarea className='w-full rounded-md border-2 border-black p-1' />
-            </div>
-            <div className='w-full text-center'>
-                <LinkButton text='Criar' to='/projects' />
+                <div className='flex flex-col w-full gap-8'>
+                    <Input name='Location' text='Location' type='text' placeholder='Location...' />
+                    <div className='flex flex-col md:flex-row justify-between w-full gap-8'>
+                        <Input name='Longitute' text='Longitude' type='text' placeholder='Longitude' />
+                        <Input name='Latitude' text='Latitude' type='text' placeholder='Latitude' />
+                    </div>
+                </div>
+                <TextArea text='Description' placeholder='Some text here...' maxRow={10} />
+                <SubmitButton type='button' text='Criar' to='/projects' />
             </div>
         </form>
     )
